@@ -6,10 +6,6 @@ import { getPostBySlug, getAllPosts, Post } from 'lib/posts'
 import Container from 'components/Container'
 import Markdown from 'components/Markdown'
 
-// TODO: Refactor this
-// const md = require('markdown-it')()
-//   .use(require('markdown-it-highlightjs'))
-
 type PostProps = {
   post: Post
 }
