@@ -5,19 +5,21 @@ export type Post = {
   slug: string
   title: string
   body: string
+  date: string
   description: string
   tags: string[]
 }
 
 function mapPost(path: string): Post {
   const content = fs.readFileSync(`./posts/${path}`, 'utf-8')
-  const { data, content: body } = matter(content)
+  const { data: info, content: body } = matter(content)
 
   return {
     slug: path.replace('.md', ''),
-    title: data.title,
-    description: data.description,
-    tags: data.tags,
+    title: info.title,
+    description: info.description,
+    date: info.date,
+    tags: info.tags,
     body
   }
 }
