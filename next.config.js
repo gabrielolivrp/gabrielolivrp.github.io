@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
-  reactStrictMode: true,
-  assetPrefix: isProd ? '/nextjs-github-pages/' : ''
+  reactStrictMode: true
 }
 
 module.exports = nextConfig
