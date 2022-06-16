@@ -1,6 +1,6 @@
-import resume from 'resume.json'
 import Container from 'components/Container'
 import { formatDate } from 'utils'
+import resume from 'resume.json'
 
 type Person = {
   name: string

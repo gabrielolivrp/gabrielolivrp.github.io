@@ -13,9 +13,10 @@ export type Post = {
 function mapPost(path: string): Post {
   const content = fs.readFileSync(`./posts/${path}`, 'utf-8')
   const { data: info, content: body } = matter(content)
+  const slug = path.replace('.md', '')
 
   return {
-    slug: path.replace('.md', ''),
+    slug,
     title: info.title,
     description: info.description,
     date: info.date,
