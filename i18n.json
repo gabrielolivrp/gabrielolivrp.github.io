@@ -1,0 +1,29 @@
+{
+  "locales": [
+    "en",
+    "pt"
+  ],
+  "defaultLocale": "pt",
+  "pages": {
+    "*": [
+      "common"
+    ],
+    "/404": [
+      "error"
+    ],
+    "/": [
+      "home",
+      "common"
+    ],
+    "/resume": [
+      "resume",
+      "my-resume"
+    ],
+    "/posts": [
+      "posts"
+    ],
+    "/posts/[slug]": [
+      "posts"
+    ]
+  }
+}

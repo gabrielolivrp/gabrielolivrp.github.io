@@ -38,13 +38,14 @@ const Posts = ({ posts }: PostsProps) => (
   </Container>
 )
 
-export const getStaticProps: GetStaticProps<PostsProps> = async () => {
-  const posts = getAllPosts()
-  return {
-    props: {
-      posts: posts
+export const getStaticProps:
+  GetStaticProps<PostsProps> = async () => {
+    const posts = getAllPosts()
+    return {
+      props: {
+        posts: posts
+      }
     }
   }
-}
 
 export default Posts

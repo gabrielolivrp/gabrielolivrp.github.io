@@ -1,0 +1,11 @@
+{
+  "header": {
+    "home": "Página inicial",
+    "resume": "Currículo",
+    "posts": "Posts"
+  },
+  "locales": {
+    "pt": "Português",
+    "en": "Inglês"
+  }
+}

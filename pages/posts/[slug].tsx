@@ -20,14 +20,21 @@ const Post = ({ post }: PostProps) => (
   </Container>
 )
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const posts = getAllPosts()
+  const paths = []
+  for (const post of posts) {
+    for (const locale of locales!) {
+      paths.push({
+        locale,
+        params: {
+          slug: post.slug,
+        },
+      })
+    }
+  }
   return {
-    paths: posts.map((post) => ({
-      params: {
-        slug: post.slug,
-      },
-    })),
+    paths,
     fallback: false
   }
 }

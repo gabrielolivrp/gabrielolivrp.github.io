@@ -1,28 +1,39 @@
 import Link from 'next/link'
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
 import { Theme, useTheme } from 'contexts'
+import useTranslation from 'next-translate/useTranslation'
+import SelectLocale from './SelectLocale'
 
 type MenuItemProps = {
   link: string
   children: React.ReactNode
+  locale?: string
 }
 
-const MenuItem = ({ link, children }: MenuItemProps) => (
-  <Link href={link}>
+const MenuItem = ({ link, children, locale }: MenuItemProps) => (
+  <Link href={link} locale={locale}>
     <a className="font-semibold text-lg">
       {children}
     </a>
   </Link>
 )
 
+type SelectLocaleProps = {
+  locales: [{ name: string, id: string }]
+  locale: string
+}
+
 const Header = () => {
   const { theme, toggleTheme } = useTheme()
+  const { t } = useTranslation('common')
+
   return (
     <div className="w-full flex items-center justify-center md:justify-end py-8">
-      <div className="space-x-4 px-8">
-        <MenuItem link="/">Home</MenuItem>
-        <MenuItem link="/posts">Posts</MenuItem>
-        <MenuItem link="/resume">Resume</MenuItem>
+      <div className="space-x-4 px-8 flex items-center justify-center">
+        <MenuItem link="/">{t`header.home`}</MenuItem>
+        <MenuItem link="/resume">{t`header.resume`}</MenuItem>
+        <MenuItem link="/posts">{t`header.posts`}</MenuItem>
+        <SelectLocale />
       </div>
       <button
         type="button"

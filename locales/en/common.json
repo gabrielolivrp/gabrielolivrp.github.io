@@ -1,0 +1,11 @@
+{
+  "header": {
+    "home": "Home",
+    "resume": "Resume",
+    "posts": "Posts"
+  },
+  "locales": {
+    "pt": "Portuguese",
+    "en": "English"
+  }
+}
