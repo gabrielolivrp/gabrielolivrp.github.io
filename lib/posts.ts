@@ -10,7 +10,7 @@ export type Post = {
   tags: string[]
 }
 
-function mapPost(path: string): Post {
+function loadPost(path: string): Post {
   const content = fs.readFileSync(`./posts/${path}`, 'utf-8')
   const { data: info, content: body } = matter(content)
   const slug = path.replace('.md', '')
@@ -21,15 +21,15 @@ function mapPost(path: string): Post {
     description: info.description,
     date: info.date,
     tags: info.tags,
-    body
+    body,
   }
 }
 
 export function getAllPosts(): Post[] {
   const files = fs.readdirSync('./posts')
-  return files.map(mapPost)
+  return files.map(loadPost)
 }
 
 export function getPostBySlug(slug: string): Post {
-  return mapPost(slug + '.md')
+  return loadPost(slug + '.md')
 }

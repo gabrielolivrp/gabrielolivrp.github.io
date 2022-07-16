@@ -31,21 +31,20 @@ type PostsProps = {
 const Posts = ({ posts }: PostsProps) => (
   <Container>
     <div className="space-y-10 divide-y">
-      {posts.map((post, key) =>
+      {posts.map((post, key) => (
         <PostPreview key={key} post={post} />
-      )}
+      ))}
     </div>
   </Container>
 )
 
-export const getStaticProps:
-  GetStaticProps<PostsProps> = async () => {
-    const posts = getAllPosts()
-    return {
-      props: {
-        posts: posts
-      }
-    }
+export const getStaticProps: GetStaticProps<PostsProps> = async () => {
+  const posts = getAllPosts()
+  return {
+    props: {
+      posts: posts,
+    },
   }
+}
 
 export default Posts

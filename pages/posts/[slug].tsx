@@ -1,7 +1,4 @@
-import {
-  GetStaticPaths,
-  GetStaticProps
-} from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { getPostBySlug, getAllPosts, Post } from 'lib/posts'
 import Container from 'components/Container'
 import Markdown from 'components/Markdown'
@@ -35,23 +32,19 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   }
   return {
     paths,
-    fallback: true
+    fallback: false,
   }
 }
 
-export const getStaticProps: GetStaticProps<
-  PostProps,
-  PageParams
-> = async ({ params }) => {
-  const post = getPostBySlug(params?.slug!)
+export const getStaticProps: GetStaticProps<PostProps, PageParams> = async (
+  props
+) => {
+  const post = getPostBySlug(props.params?.slug!)
   return {
     props: {
-      post: post
-    }
+      post: post,
+    },
   }
 }
 
 export default Post
-
-
-

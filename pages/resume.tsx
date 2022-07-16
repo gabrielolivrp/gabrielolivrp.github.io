@@ -90,8 +90,8 @@ const Experiences = ({ experiences }: { experiences: Experience[] }) => {
         <div key={key}>
           <h3>{item.office}</h3>
           <h5 className="italic uppercase">
-            {item.company} /
-            ({formatDate(item.date.start)} - {formatDate(item.date.end)})
+            {item.company} / ({formatDate(item.date.start)} -{' '}
+            {formatDate(item.date.end)})
           </h5>
           <p>{item.description}</p>
         </div>
@@ -109,8 +109,8 @@ const Education = ({ education }: { education: Education[] }) => {
         <div key={key}>
           <h3>{item.course}</h3>
           <h5 className="italic uppercase">
-            {item.institution} /
-            ({formatDate(item.date.start)} - {formatDate(item.date.end)})
+            {item.institution} / ({formatDate(item.date.start)} -{' '}
+            {formatDate(item.date.end)})
           </h5>
         </div>
       ))}
@@ -120,9 +120,21 @@ const Education = ({ education }: { education: Education[] }) => {
 
 const Resume = () => {
   const { t } = useTranslation('resume')
-  const education = t<Education[]>('my-resume:education', {}, { returnObjects: true })
-  const experiences = t<Experience[]>('my-resume:experiences', {}, { returnObjects: true })
-  const projects = t<Project[]>('my-resume:projects', {}, { returnObjects: true })
+  const education = t<Education[]>(
+    'my-resume:education',
+    {},
+    { returnObjects: true }
+  )
+  const experiences = t<Experience[]>(
+    'my-resume:experiences',
+    {},
+    { returnObjects: true }
+  )
+  const projects = t<Project[]>(
+    'my-resume:projects',
+    {},
+    { returnObjects: true }
+  )
   const skills = t<Skills>('my-resume:skills', {}, { returnObjects: true })
 
   return (
@@ -130,16 +142,22 @@ const Resume = () => {
       <h1>{t`resume`}</h1>
       <div>
         <h2>{t`about`}</h2>
-        <p><b>{t`name`}:</b> {t`my-resume:person.name`}</p>
-        <p><b>{t`email`}:</b> {t`my-resume:person.email`}</p>
-        <p><b>{t`city`}:</b> {t`my-resume:person.location`}</p>
+        <p>
+          <b>{t`name`}:</b> {t`my-resume:person.name`}
+        </p>
+        <p>
+          <b>{t`email`}:</b> {t`my-resume:person.email`}
+        </p>
+        <p>
+          <b>{t`city`}:</b> {t`my-resume:person.location`}
+        </p>
         <p>{t`my-resume:person.about`}</p>
       </div>
       <Education education={education} />
       <Experiences experiences={experiences} />
       <Projects projects={projects} />
       <Skills skills={skills} />
-    </Container >
+    </Container>
   )
 }
 export default Resume
