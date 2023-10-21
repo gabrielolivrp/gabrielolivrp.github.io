@@ -1,25 +1,33 @@
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'contexts'
+import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
-import 'styles/globals.css'
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <>
-    <Head>
-      <title>Gabriel Augusto</title>
-    </Head>
-    <ThemeProvider>
-      <div className="h-screen flex justify-center px-4">
-        <div className="w-full flex flex-col items-center">
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
+import 'styles/globals.css'
+import { SwitchTheme } from '@/components'
+import { useIsMounted } from '@/hooks'
+
+const App = ({ Component, pageProps }: AppProps) => {
+  const isMounted = useIsMounted();
+  if (!isMounted) return null;
+
+  return (
+    <>
+      <Head>
+        <title>Gabriel Augusto</title>
+      </Head>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="light"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <Component {...pageProps} />
+        <div className="fixed bottom-5 right-5">
+          <SwitchTheme />
         </div>
-      </div>
-    </ThemeProvider>
-  </>
-)
+      </ThemeProvider>
+    </>
+  )
+}
 
 export default App
