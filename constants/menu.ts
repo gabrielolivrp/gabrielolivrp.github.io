@@ -1,10 +1,10 @@
 export const menu = [
   {
-    name: 'Início',
+    name: 'Home',
     link: '/',
   },
   {
-    name: 'Projetos',
+    name: 'Projects',
     link: '/projects',
   },
 ]

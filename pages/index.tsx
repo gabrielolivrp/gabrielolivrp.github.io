@@ -1,46 +1,14 @@
 import { Button, Icon } from '@/components/ui'
-import { Menu, SocialLink } from '@/components'
+import { Header, Menu, SocialLink } from '@/components'
 import { useState } from 'react'
 
 const Home = () => {
 
-  const [open, setOpen] = useState(false)
 
   return (
-    <div className="w-full h-full flex items-center justify-center px-4">
-      <div
-        className={`${
-          open ? 'block' : 'hidden'
-        } absolute bg-background rounded-2xl w-2/3 h-1/4 transition ease-in-out`}
-      >
-        <Button
-          className="absolute top-1 right-1"
-          variant="link"
-          onClick={() => setOpen(false)}
-        >
-          <Icon name="X"></Icon>
-        </Button>
-        <div className="h-full flex flex-col space-y-4 items-center justify-center">
-          <Menu />
-        </div>
-      </div>
-
-      <div className="max-w-4xl md shadow-md flex flex-col py-4 px-10 lg:px-24 lg:py-10 bg-secondary rounded-2xl">
-        <div className="flex items-center justify-between md:mb-8">
-          <div>
-            <h1 className="text-lg font-semibold leading-relaxed">Logo Here</h1>
-          </div>
-
-          <div className="hidden lg:flex space-x-8">
-            <Menu />
-          </div>
-
-          <div className="flex lg:hidden">
-            <Button variant="link" onClick={() => setOpen(true)}>
-              <Icon name="Menu"></Icon>
-            </Button>
-          </div>
-        </div>
+    <div className="static w-full h-full flex items-center justify-center px-4">
+      <div className="static max-w-4xl md shadow-md flex flex-col py-4 px-10 lg:px-24 lg:py-10 bg-secondary rounded-2xl">
+        <Header />
 
         <div className="h-full flex items-center mt-8 md:mt-0">
           <div className="w-full grid gap-4 grid-cols-1 lg:grid-cols-2">
