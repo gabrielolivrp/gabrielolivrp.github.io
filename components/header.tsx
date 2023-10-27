@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import Link from 'next/link'
+
 import { Button, Icon } from './ui'
 import { Menu } from './menu'
-import Link from 'next/link'
 
 const Header = () => {
   const [open, setOpen] = useState(false)
@@ -9,7 +10,15 @@ const Header = () => {
   return (
     <>
       <div
-        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background rounded-2xl w-2/3 h-1/4 transition ease-in-out ${open ? 'block' : 'hidden'}`}
+        className={`fixed inset-0 z-40 bg-background/80 backdrop-blur-sm  ${
+          open ? 'block' : 'hidden'
+        }`}
+        onClick={() => setOpen(false)}
+      />
+      <div
+        className={`absolute z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background rounded-2xl w-2/3 h-1/4 transition ease-in-out ${
+          open ? 'block' : 'hidden'
+        }`}
       >
         <Button
           className="absolute top-1 right-1"
