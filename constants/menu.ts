@@ -7,4 +7,8 @@ export const menu = [
     name: 'Projects',
     link: '/projects',
   },
+  {
+    name: 'Posts',
+    link: '/posts',
+  },
 ]

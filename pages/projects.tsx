@@ -1,7 +1,7 @@
+import Link from 'next/link'
+import projects from '@/projects.json'
 import { Header } from '@/components'
 import { Badge, Icon } from '@/components/ui'
-import { projects } from '@/constants/projects'
-import Link from 'next/link'
 
 interface ProjectProps {
   name: string
@@ -44,20 +44,17 @@ const Project = ({
   </div>
 )
 
-const Projects = () => {
-  return (
-    <div className="px-4 md:px-0 max-w-3xl mx-auto">
-      <div className="py-4">
-        <Header />
-      </div>
-
-      <div className="space-y-8">
-        {projects.map((project, key) => (
-          <Project {...project} key={key} />
-        ))}
-      </div>
+const Projects = () => (
+  <div className="px-4 md:px-0 max-w-3xl mx-auto">
+    <div className="py-4">
+      <Header />
     </div>
-  )
-}
+    <div className="space-y-8">
+      {projects.map((project, key) => (
+        <Project {...project} key={key} />
+      ))}
+    </div>
+  </div>
+)
 
 export default Projects
