@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Portfólio",
+    "technologies": ["React", "Next.js", "Tailwind CSS"],
+    "banner": "https://placehold.co/600x400",
+    "description": "Portfólio criado para compartilhar meus projetos pessoais e conhecimentos adquiridos em minha jornada de aprendizado.",
+    "link": "https://github.com/gabrielolivrp/gabrielolivrp.github.io"
+  }
+]
