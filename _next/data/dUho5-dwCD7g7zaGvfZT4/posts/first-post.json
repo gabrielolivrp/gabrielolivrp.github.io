@@ -1,0 +1,1 @@
+{"pageProps":{"post":{"slug":"first-post","title":"The first post","description":"The classic \"Hello World\" in Haskell","date":"2023-10-30","tags":["Hello World","Haskell"],"body":"\n## The first post\n\n```haskell\nmain :: IO ()\nmain = putStrLn \"Hello World\"\n```\n"}},"__N_SSG":true}
