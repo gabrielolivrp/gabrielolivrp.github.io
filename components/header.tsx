@@ -39,7 +39,7 @@ const Header = () => {
         onClick={() => setOpen(false)}
       />
       <div
-        className={`absolute z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background rounded-2xl w-2/3 h-1/4 transition ease-in-out ${
+        className={`absolute z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background border rounded-2xl w-2/3 h-1/4 transition ease-in-out ${
           open ? 'block' : 'hidden'
         }`}
       >
