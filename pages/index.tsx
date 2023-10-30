@@ -10,14 +10,13 @@ const Home = () => (
         <div className="w-full grid gap-4 grid-cols-1 lg:grid-cols-2">
           <div className="space-y-6 order-last lg:order-none">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
-              Hello, I&apos;m Gabriel Augusto
+              Olá, eu sou Gabriel Augusto
             </h1>
             <p className="text-lg font-base leading-relaxed">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem,
-              ipsum dolor sit amet consectetur adipisicing elit. ipsum dolor sit
-              amet consectetur adipisicing elit. ipsum dolor sit amet
-              consectetur adipisicing elit. ipsum dolor sit amet consectetur
-              adipisicing elit.
+              Sou um desenvolvedor de software com foco em aplicações web. Possuo
+              experiências com desenvolvimento web, mobile e blockchain. Tenho
+              uma boa facilidade para aprender novas tecnologias e estou sempre
+              estudando para me aprimorar ainda mais.
             </p>
 
             <div className="flex space-x-4">
