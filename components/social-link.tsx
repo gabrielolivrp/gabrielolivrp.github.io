@@ -1,6 +1,18 @@
 import { Button, Icon } from '@/components/ui'
-import { socials } from '@/constants/social'
 import Link from 'next/link'
+
+const socials = {
+  github: {
+    name: 'Github',
+    url: 'https://www.github.com/gabrielolivrp',
+    icon: 'Github',
+  },
+  linkedin: {
+    name: 'Linkedin',
+    url: 'https://www.linkedin.com/in/gabrielolivrp',
+    icon: 'Linkedin',
+  },
+}
 
 interface SocialProps {
   name: keyof typeof socials

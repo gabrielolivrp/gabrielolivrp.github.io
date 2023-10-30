@@ -2,7 +2,30 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 import { Button, Icon } from './ui'
-import { Menu } from './menu'
+
+const menu = [
+  {
+    name: 'Início',
+    link: '/',
+  },
+  {
+    name: 'Projetos',
+    link: '/projects',
+  },
+  {
+    name: 'Posts',
+    link: '/posts',
+  },
+]
+
+const Menu = () =>
+  menu.map((m, key) => (
+    <Link key={key} href={m.link}>
+      <Button variant="link" className="text-lg font-semibold">
+        {m.name}
+      </Button>
+    </Link>
+  ))
 
 const Header = () => {
   const [open, setOpen] = useState(false)
