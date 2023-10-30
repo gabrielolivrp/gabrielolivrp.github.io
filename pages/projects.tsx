@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import projects from '@/projects.json'
 import { Header } from '@/components'
 import { Badge, Icon } from '@/components/ui'
@@ -37,10 +38,15 @@ const Project = ({
       </div>
       <div className="mt-4">{description}</div>
     </div>
-    <img
-      src={banner}
-      className="rounded-2xl mb-4 lg:mb-0 lg:w-72 lg:h-48 order-first lg:order-none"
-    />
+    <div className="mb-4 lg:mb-0 lg:w-full lg:h-48 order-first lg:order-none relative">
+      <Image
+        layout="fill"
+        objectFit="cover"
+        className="rounded-2xl"
+        alt={name}
+        src={banner}
+      />
+    </div>
   </div>
 )
 

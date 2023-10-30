@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Header, SocialLink } from '@/components'
 
 const Home = () => (
@@ -26,11 +27,15 @@ const Home = () => (
           </div>
 
           <div className="flex justify-center items-center lg:justify-end mb-8 md:mb-0 order-first lg:order-none">
-            <img
-              className="rounded-full border lg:w-64 md:w-48 w-32 lg:h-64 md:h-48 h-32"
-              src="https://avatars.githubusercontent.com/u/99810957?v=4"
-              alt="User picture"
-            />
+            <div className="lg:w-64 md:w-48 w-32 lg:h-64 md:h-48 h-32 relative">
+              <Image
+                className="rounded-full border"
+                src="https://avatars.githubusercontent.com/u/99810957?v=4"
+                alt="User picture"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
           </div>
         </div>
       </div>
