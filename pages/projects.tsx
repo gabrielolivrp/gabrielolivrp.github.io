@@ -18,7 +18,7 @@ const Project = ({
   description,
   link,
 }: ProjectProps) => (
-  <div className="flex flex-col lg:flex-row lg:h-64 p-8 bg-secondary rounded-2xl">
+  <div className="flex flex-col lg:flex-row lg:h-64 p-8 bg-secondary border rounded-2xl">
     <div className="lg:pr-4">
       <h1 className="group text-lg font-bold cursor-pointer">
         <Link href={link} target="blank">

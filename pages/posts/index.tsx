@@ -8,7 +8,7 @@ import { Header } from '@/components'
 interface PostProps extends Post {}
 
 const Post = ({ title, description, tags, slug }: PostProps) => (
-  <div className="flexlg:h-64 p-8 bg-secondary rounded-2xl">
+  <div className="flexlg:h-64 p-8 bg-secondary border rounded-2xl">
     <h1 className="group text-lg font-bold cursor-pointer">
       <Link href={`/posts/${slug}`}>
         {title}

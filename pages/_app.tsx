@@ -7,8 +7,8 @@ import { SwitchTheme } from '@/components'
 import { useIsMounted } from '@/hooks'
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const isMounted = useIsMounted();
-  if (!isMounted) return null;
+  const isMounted = useIsMounted()
+  if (!isMounted) return null
 
   return (
     <>

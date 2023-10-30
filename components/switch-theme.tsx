@@ -6,9 +6,8 @@ const SwitchTheme = () => {
   const { theme, setTheme } = useTheme()
   return (
     <Button
-      variant="ghost"
       size="icon"
-      className="rounded-full"
+      className="border rounded-full w-14 h-14"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
       <Switch value={theme}>
