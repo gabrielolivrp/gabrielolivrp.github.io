@@ -13,10 +13,7 @@ const Markdown = ({ text }: MarkdownProps) => (
         const match = /language-(\w+)/.exec(className || '')
 
         return match ? (
-          <Highlighter
-            children={children}
-            language={match[1]}
-          />
+          <Highlighter language={match[1]}>{children}</Highlighter>
         ) : (
           <code {...rest} className={className}>
             {children}
