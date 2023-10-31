@@ -57,7 +57,7 @@ const Header = () => {
 
       <div className="flex items-center justify-between md:mb-8">
         <h1 className="text-lg font-semibold leading-relaxed">
-          <Link href="/">Logo Here</Link>
+          <Link href="/">{"<\\>"}</Link>
         </h1>
         <div className="hidden lg:flex space-x-8">
           <Menu />
